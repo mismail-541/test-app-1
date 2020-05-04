@@ -1,0 +1,27 @@
+@font-face {
+font-family: 'Harry Potter Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Harry Potter Regular'), url('HARRP.woff') format('woff');
+}
+
+.hogwarts-student-card{
+	border: solid black 2px;
+	margin: 5px;
+	text-align: center;
+	padding: 5px;
+}
+
+.hogwarts-student-card-list{
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+}
+
+h1{
+	font-family: 'Harry Potter Regular';
+}
+
+.portrait-image{
+	width: 100%;
+}
