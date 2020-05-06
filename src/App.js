@@ -20,6 +20,9 @@ import StudentList from './Hogwarts/StudentList.js';
 //Scroll component:
 import Scroll from './scroll/Scroll.js';
 
+//Import the error handler, AKA Error Boundary:
+import ErrorBoundary from './ErrorBoundary.js';
+
 class App extends Component{
 
     constructor(){
@@ -41,7 +44,7 @@ class App extends Component{
     componentDidMount(){
       console.log('check');
 
-      fetch('http://hp-api.herokuapp.com/api/characters')
+      fetch('http://e107:8080/spring-react-api/all')
       .then(response=> response.json())
       .then(studentsList => this.setState({studentsList: studentsList}))
 
@@ -86,7 +89,11 @@ else{
         <BannerImage />
         <Searchbox onchangeSearch={this.onchangeSearch}/>
         <Scroll>
-          <StudentList students={passedStudents}/>
+
+          <ErrorBoundary>
+            <StudentList students={passedStudents}/>
+          </ErrorBoundary>
+          
         </Scroll>
       </div>
     );
