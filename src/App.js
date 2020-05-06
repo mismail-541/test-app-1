@@ -44,7 +44,7 @@ class App extends Component{
     componentDidMount(){
       console.log('check');
 
-      fetch('http://hp-api.herokuapp.com/api/characters')
+      fetch('https://hp-api.herokuapp.com/api/characters')
       .then(response=> response.json())
       .then(studentsList => this.setState({studentsList: studentsList}))
 
